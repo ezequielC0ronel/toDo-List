@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Tarea.init(
     {
-      idTarea:{type: DataTypes.INTEGER, primaryKey:true},
+      idTarea:{type: DataTypes.INTEGER, primaryKey:true, autoIncrement:true},
       tareaDesc: DataTypes.STRING,
     },
     {
