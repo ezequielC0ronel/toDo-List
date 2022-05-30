@@ -1,25 +1,16 @@
 var express = require("express");
 var router = express.Router();
 let mysql = require("mysql2");
+let modeloTareas = require('../models').Tarea;
 let actualizar = require("../public/javascripts/actualizarLista");
 
 let refreshList = actualizar.actualizarLista;
 
-let connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "tareastodo",
-  port: 3306,
-});
-
 
 /* GET todo page. */
-router.get("/", function (req, res, next) {
-  connection.connect((error) => {
-    if (error) throw error;
-    refreshList(connection, res);
-  });
+router.get("/",  async function(req, res, next) {
+  const tareas = await modeloTareas.findAll();
+  res.render("todo", {listaTareas: tareas})
 });
 
 router.post("/add", function (req, res, next) {
