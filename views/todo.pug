@@ -6,14 +6,14 @@ block content
     form(action="/todo/add", method="post", autocomplete="off") 
         input(type="text", name="nuevaTarea", placeholder="Añadir una tarea")
         input(type="submit", value="Añadir tarea")
-    if listaTareas.length > 0
+    if listaItems.length > 0
         ul#listaTareas
-            each tarea in listaTareas 
+            each item in listaItems 
              li 
                 form(action="", method="post", id="borrarForm")
                     input(type="submit", value="X" id="borrarTarea")
-                    input(type="hidden", name="id_tarea", value=`${tarea.idTarea}`)
-                    span= tarea.tareaDesc
+                    input(type="hidden", name="id_tarea", value=`${item.idItem}`)
+                    span= item.descripcion
 
     else 
         p No hay tareas
