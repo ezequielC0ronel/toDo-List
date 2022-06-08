@@ -2,7 +2,9 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Categoria extends Model {
-    static associate(models) {}
+    static associate(models) {
+      Categoria.hasMany(models.Lista, {foreignKey: "categoria_lista"})
+    }
   }
   Categoria.init(
     {
@@ -14,12 +16,12 @@ module.exports = (sequelize, DataTypes) => {
       nombre_categoria: {
         type: DataTypes.STRING(60),
         allowNull: false,
-      }
+      },
     },
     {
       sequelize,
       modelName: "Categoria",
-      tableName:"categorias",
+      tableName: "categorias",
       timestamps: false,
       createdAt: false,
     }
