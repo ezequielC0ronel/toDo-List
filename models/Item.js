@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       descripcion: { type: DataTypes.STRING(120) },
       prioridad: { type: DataTypes.STRING(60) },
       fecha_limite: { type: DataTypes.DATEONLY },
+      estado:{type:DataTypes.STRING(60)},
+      titulo:{type:DataTypes.STRING(60)},
+      lista_origen:{type: DataTypes.INTEGER}
     },
     {
       sequelize,
