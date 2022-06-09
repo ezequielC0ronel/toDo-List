@@ -1,6 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a(href="/todo") ir al to do list
+  h1 To do List
+  a(href="/crear/lista") Crear Lista
+  br
+  a(href="/crear/item") Crear Item
+  #listaTareas
+    if listaTareas.length > 0
+      each lista in listaTareas 
+        li 
+          a(href="#")= lista.titulo
+    else 
+      p No hay listas cargadas
