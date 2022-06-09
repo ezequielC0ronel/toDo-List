@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: "Lista",
       tableName: "listas_item",
-      updatedAt:false
+      updatedAt:false,
+      createdAt:"fecha_creacion"
     }
   );
   return Lista;
