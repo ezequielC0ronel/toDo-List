@@ -3,15 +3,11 @@ extends layout
 block content 
     h1 Nueva Lista 
     #formulario
-        form(action="", method="post")
+        form(action="/crear/lista/add", method="post", autocomplete="off")
             label(for="titulo") Titulo 
             input(type="text", name="tituloLista", id="titulo", placeholder="Coloca un titulo a la lista")
             br
-            .fechaLista 
-                #desde
-                    span Desde
-                    br
-                    input(type="date", name="fechaCreacion")
+            .fechaLista
                 #hasta 
                     span Hasta 
                     br
