@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+    h1 Nueva Lista 
+    #formulario
+        form(action="", method="post")
+            label(for="titulo") Titulo 
+            input(type="text", name="tituloLista", id="titulo", placeholder="Coloca un titulo a la lista")
+            br
+            .fechaLista 
+                #desde
+                    span Desde
+                    br
+                    input(type="date", name="fechaCreacion")
+                #hasta 
+                    span Hasta 
+                    br
+                    input(type="date", name="fechaResoulucion")
+            label(for="categoria") Categoria 
+            select(name="categorias", id="categoria")
+            br
+            input(type="submit", value="Cargar lista")
+    a(href="/") Volver al inicio   

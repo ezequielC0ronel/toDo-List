@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+    h1 Nueva Item
+    #formulario
+        form(action="", method="post")
+            label(for="descripcion") Descripción 
+            input(type="text", name="descripcionItem", id="descripcion", placeholder="Coloca una descripcion al item")
+            br
+            .fechaLista 
+                #desde
+                    span Desde
+                    br
+                    input(type="date", name="fechaCreacion")
+                #hasta 
+                    span Hasta 
+                    br
+                    input(type="date", name="fechaResoulucion")
+            label(for="prioridad") Prioridad 
+            select(name="categorias", id="categoria")
+                option(value="baja") Baja 
+                option(value="media") Media
+                option(value="alta") Alta
+            br
+            label(for="listas") Listas 
+            select(name="listasItem", id="listas")
+            input(type="submit", value="Cargar item")
+    a(href="/") Volver al inicio
